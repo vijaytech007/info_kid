@@ -1,0 +1,13 @@
+.table-stripped{
+width:800px;
+border:0px solid;
+}
+.table-stripped th{
+background:whiteSmoke;
+text-align:left;
+padding:9px;
+}
+.table-stripped td {
+    border-bottom: 1px solid gray;
+    padding:6px;
+}

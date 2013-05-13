@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Collection</title>
+<script type="text/javascript" src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="http://backbonejs.org/backbone-min.js"></script>
+<script type="text/javascript">
+var Song = Backbone.Model.extend({
+	 defaults: {
+	 name: "Not specified",
+	 artist: "Not specified"
+	 },
+	 initialize: function(){
+	 console.log("Music is the answer");
+	 }
+	 });
+	
+	 var Album = Backbone.Collection.extend({
+	 model: Song
+ });
+ var song1 = new Song({ name: "How Bizarre", artist: "OMC" });
+	 var song2 = new Song({ name: "Sexual Healing", artist: "Marvin Gaye" }) ;
+	 var song3 = new Song({ name: "Talk It Over In Bed", artist: "OMC" });
+	
+	 var myAlbum = new Album([ song1, song2, song3]);
+	 console.log( myAlbum.models ); // [song1, song2, song3]
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

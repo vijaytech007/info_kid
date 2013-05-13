@@ -1,0 +1,24 @@
+[
+    {
+        "text": "Western",
+        "children": [
+            {
+                "id": "CA",
+                "text": "California"
+            },
+            {
+                "id": "AZ",
+                "text": "Arizona"
+            }
+        ]
+    },
+    {
+        "text": "Eastern",
+        "children": [
+            {
+                "id": "FL",
+                "text": "Florida"
+            }
+        ]
+    }
+]

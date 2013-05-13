@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Login Page | Info Kids</title>
+<link href="./assets/js/lib/select2/select2.css" rel="stylesheet"/>
+<script type="text/javascript" src="./assets/js/lib/jQuery/jquery.js"></script>
+<script src="./assets/js/lib/select2/select2.js"></script>
+<script>
+$(document).ready(function() { 
+	/*$("#e1").select2({
+		data:"assets/school.json",
+		placeholder:"Select School",
+		width:"400px"
+	});*/
+	 	
+	});
+$.ajax({
+	url:"assets/jsonp.php",
+	success:function(response)
+		{
+		//	console.log(response);
+			$("#e1").select2({
+				data:response,
+				placeholder:"Select School",
+				width:"400px"
+				});
+			$("#e1").select2("container").find("ul.select2-choices").sortable({
+				containment: 'parent',
+				start: function() { $("#e1").select2("onSortStart"); },
+				update: function() { $("#e1").select2("onSortEnd"); }
+				});
+		},
+	error:function(err)
+		{
+		//	console.log(err);
+		}	
+});
+</script>
+</head>
+<body>
+<!-- <div id="e1"></div> -->
+</body>
+</html>

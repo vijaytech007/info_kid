@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Backbone DB test</title>
+</head>
+<body>
+<script type="text/template" id="submit_template">
+<label><%=label_name%></label>
+<input type="text"  /><br/>
+<label><%=label_email%></label>
+<input type="text"  /><br/>
+<input type="button"  id="submit_button" value="Submit" />
+</script>
+
+ <div id="user_container" ></div>
+<script type="text/javascript" src="./assets/js/lib/underscore/underscore.min.js"></script>
+<script type="text/javascript" src="./assets/js/lib/jQuery/jquery.js"></script>
+<script type="text/javascript" src="./assets/js/lib/backbone/backbone.min.js"></script>
+<script type="text/javascript">
+
+Person=Backbone.Model.extend({
+	urlRoot:'bbDB.php',
+	defaults:{
+		name:"foo",
+		email:"info@gmail.com"
+},
+initialize:function(){
+	console.log("Model initialized!!");
+	this.on("change:name",function(){
+		var name=this.get("name");
+		console.log("The name attribute changed:"+name);
+	});
+}
+});
+var person=new Person();
+
+ SubmitDataView = Backbone.View.extend({
+	initialize: function(){
+				 this.render();
+				 },
+				 render: function(){
+				 var variables={label_name:"name",label_email:"email"};			
+				 var template = _.template( $("#submit_template").html(), variables);
+				 this.$el.html( template );
+				 },
+				 events: {				 
+				 "click #submit_button": "doSubmit"
+				 },
+				doSubmit: function(){
+						try{				 
+					 	var wrapper=$("#user_container").children("input");		
+						person.set("name",wrapper[0].value);
+						person.set("email",wrapper[1].value);			
+						person.save(null,{
+							success:function(response){
+							console.log(response);
+							}
+							});
+						}
+						catch(err){
+						console.log("error is: "+err);
+							}		
+				 }				 
+ });
+
+ var submit_view = new SubmitDataView({ el: $("#user_container")});	 
+ 
+	
+	
+	
+ </script>
+</body>
+</html>
