@@ -1,4 +1,14 @@
+data/public/assets/js/collections/backboneTest/UsersCollection.js.i
 data/sys/class/class.userList.inc.php.i
-data/public/assets/services/saveUser.php.i
+data/public/backboneTest/routeRequireTest.html.i
+data/public/assets/js/views/backboneTest/UserListView.js.i
+data/public/assets/templates/backboneTest/editUserFormTemplate.html.i
+data/public/assets/js/app.js.i
 data/public/backboneTest/route.html.i
+data/public/assets/js/views/backboneTest/EditUserView.js.i
+data/public/assets/templates/backboneTest/userListTemplate.html.i
+data/public/assets/js/main.js.i
+data/public/assets/js/routerControl/router.js.i
+data/public/assets/js/models/backboneTest/UserModel.js.i
+data/public/assets/services/saveUser.php.i
 data/public/assets/services/getUserList.php.i

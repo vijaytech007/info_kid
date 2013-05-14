@@ -49,11 +49,11 @@
 	</form>
 
 </script> 
-<script type="text/javascript" src="../assets/js/lib/underscore/underscore.min.js"></script>
+<script type="text/javascript" src="../assets/js/lib/underscore/underscore-min.js"></script>
 <script type="text/javascript" src="../assets/js/lib/jQuery/jquery.js"></script>
-<script type="text/javascript" src="../assets/js/lib/backbone/backbone.min.js"></script>
+<script type="text/javascript" src="../assets/js/lib/backbone/backbone-min.js"></script>
 <script type="text/javascript">
-$.fn.serializeObject = function () {
+/*$.fn.serializeObject = function () {
 	var o = {},
 	a = this.serializeArray();
 	$.each(a, function () {
@@ -68,7 +68,7 @@ $.fn.serializeObject = function () {
 	});
 	 
 	return o;
-	};
+	};*/
 
 var Users=Backbone.Collection.extend({
 	url:'../assets/services/getUserList.php'

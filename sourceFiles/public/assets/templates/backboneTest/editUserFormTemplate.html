@@ -1,0 +1,14 @@
+<form class="edit-user-form">
+			<h4><%= user?"Update":"Create"%> User</h4>
+			<hr/>
+			<label>Name</label>
+			<input type="text" name="name" value="<%= user?user.get('name'):''%>"/>
+			<label>Email</label>
+			<input type="text" name="email" value="<%= user?user.get('email'):''%>"/>
+			<hr/>           
+			<button type="submit" class="btn" ><%= user?"Update":"Create"%></button>
+ 			<% if(user){%>
+				<input name="id" type="hidden" value="<%= user.id %>"/>
+				<button type="button" class="btn btn-danger delete" >Delete</button>
+			<% }; %>					
+</form>
