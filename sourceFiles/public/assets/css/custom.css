@@ -1,0 +1,145 @@
+.headerWrapper{
+    min-height:45px;
+    background:white;
+    width:100%;
+    position:relative;
+    height:auto;
+}
+a.menu-icon{
+text-decoration:none;
+color:white;
+font-weight:bold;
+background:#0072C6;
+font-size:16px;
+padding:3px;
+border-radius: 0 0 5px 5px;
+top:0px;
+position:relative;
+float:left;
+}
+.menu-wrapper{
+    float: right;
+    margin: 0 51px 0 0;
+    position: relative;
+    display:inline;        
+}
+icon-align-justify-custom{
+margin-right:3px;
+}
+
+.user-info{
+background:white;
+height:20px;
+display:inline;
+padding:3px 92px 3px 3px;
+position:relative;
+float:left;
+position:relative;
+
+}
+
+.welcome-nav li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+}
+
+.menu-content-wrapper {
+    background:#0072C6;
+    height: 4px;
+}
+.adding-right-top-curve{
+    background:white;
+    border-radius: 3px 0 0 0;
+    float: left;
+    height: 20px;
+    padding: 2px;
+    position: relative;
+    top: -3px;
+    width: 90px;
+}
+
+.left-separator {
+    border-left: 1px solid lightgrey;
+    margin-left: 10px !important;
+    padding-left: 10px;
+}
+
+
+.login-user-form {
+    background: url("../img/infokids.png") no-repeat scroll right center transparent;
+    border: 1px solid #CCCCCC;
+    border-radius: 12px 12px 12px 12px;
+    margin: 86px auto 0 auto;
+    padding: 5px 36px 24px;
+    width: 400px;
+}
+
+
+
+.login-user-form button[type="submit"] {
+    margin: 12px 0;
+}
+
+.header-login {
+    background: none repeat scroll 0 0 #0072C6;
+    color: white;
+    font-family: "Helvetica New";
+    font-size: 24px;
+    font-weight: bold;
+    margin: 79px 0;
+    padding: 10px 0 10px 80px;
+}
+
+.footer{
+color:#cccccc;
+background:whiteSmoke;
+padding:10px 0px 10px 10px;
+border-top:1px solid lightGrey;
+position:fixed;
+bottom:0;
+width:100%;
+z-index:99;
+}
+
+.login-type{
+margin-left:230px
+}
+
+
+
+
+
+.login-type-content {
+    border-bottom: 3px solid #0076C6;
+    color: #0076C6;
+    display: inline;
+    font-weight: bold;
+    padding: 4px;
+    width: 300px;
+}
+
+.login-type-list li{
+display:inline;
+margin-left:20px;
+}
+.login-type-list{
+display:inline;
+margin-left:2px;
+}
+.admin, .parent, .teacher {
+    color: #0072C6;
+    font-size: 17px;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+    cursor:pointer;
+}
+.error-message {
+    color: red;
+    font-weight: bold;
+    left: 235px;
+    max-width: 472px;
+    position: relative;
+    top: 12px;
+}

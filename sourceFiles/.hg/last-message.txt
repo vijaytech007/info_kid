@@ -1,1 +1,1 @@
-version 1.4 just url changes
+version 1.0 started infokids applied login logout home page

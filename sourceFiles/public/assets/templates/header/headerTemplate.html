@@ -1,0 +1,17 @@
+<% if(activeSession) { %>
+<div class="headerWrapper">
+<div class="menu-content-wrapper"></div>
+<div class="menu-wrapper">
+<div class="user-info">
+<ul class="welcome-nav"><li>Welcome, <%= activeSession.get('username') %></li>
+<li class="left-separator"><a href="#logout">Log out</a></li></ul>
+	</div>
+		<a href="#" class="menu-icon">
+		<i class="icon-align-justify icon-align-justify-custom"></i>
+		 Menu <i class="icon-chevron-sign-down"></i>
+		</a>
+ 	</div>
+</div>
+<% } else { %>
+<div class="header-login">Welcomes you </div>
+<% } %>
