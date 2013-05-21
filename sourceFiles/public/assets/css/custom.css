@@ -45,8 +45,14 @@ position:relative;
 }
 
 .menu-content-wrapper {
-    background:#0072C6;
-    height: 4px;
+    border-bottom:4px solid #0072C6;
+    height:0px;
+    background:mintcream;
+    transition:height 0.2s ease-in 0.1s;
+	-webkit-transition: height 0.2s ease-in 0.1s;
+}
+.menu-content-wrapper-expanded{
+ height:200px;
 }
 .adding-right-top-curve{
     background:white;
@@ -70,7 +76,7 @@ position:relative;
     background: url("../img/infokids.png") no-repeat scroll right center transparent;
     border: 1px solid #CCCCCC;
     border-radius: 12px 12px 12px 12px;
-    margin: 86px auto 0 auto;
+    margin: 45px auto 0 auto;
     padding: 5px 36px 24px;
     width: 400px;
 }

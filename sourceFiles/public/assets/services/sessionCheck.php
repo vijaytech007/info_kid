@@ -11,7 +11,8 @@ $user=new Session($dbo);
 				echo json_encode($arr);
 			}
 			else {
-			header('HTTP/1.1 403 Forbidden Access');			
+			header('HTTP/1.1 403 Forbidden Access');
+			//header("Location: http://google.com");			
 			}
 			exit;
 		}

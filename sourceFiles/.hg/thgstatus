@@ -1,2 +1,5 @@
 mpublic/assets/js
-mpublic/assets/js/views/backboneTest
+mpublic/assets/js/routerControl
+mpublic/assets/js/views/login
+mpublic/assets/services
+msys/class

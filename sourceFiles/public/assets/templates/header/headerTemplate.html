@@ -3,7 +3,7 @@
 <div class="menu-content-wrapper"></div>
 <div class="menu-wrapper">
 <div class="user-info">
-<ul class="welcome-nav"><li>Welcome, <%= activeSession.get('username') %></li>
+<ul class="welcome-nav"><li>Welcome, <%= activeSession.get('username').charAt(0).toUpperCase()+activeSession.get('username').slice(1) %></li>
 <li class="left-separator"><a href="#logout">Log out</a></li></ul>
 	</div>
 		<a href="#" class="menu-icon">

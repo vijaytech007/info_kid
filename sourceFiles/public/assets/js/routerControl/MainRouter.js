@@ -14,12 +14,13 @@ define([
 		'logout':'logout'
 	}	
   });
-
-  var app_router = new AppRouter();
+ 
+  var app_router = new AppRouter();	
+  var headerView=new HeaderView();
+  var footerView=new FooterView();    
+  var homeView=new HomeView();
   var initialize = function(){   
-    var headerView=new HeaderView();
-    var footerView=new FooterView();    
-    var homeView=new HomeView();
+
     app_router.on(
     		'route:home',function(){
     			window.activeSession.getAuth();
@@ -30,19 +31,20 @@ define([
     app_router.on(
     		'route:login',function(){
     			if(window.activeSession){
-    			window.activeSession.getAuth();
+    			//window.activeSession.getAuth();
     			window.router.controller.navigate('home',{trigger:true});
     			}
     		});   
     app_router.on(
     		'route:logout',function(){
     			if(window.activeSession){
-    				console.log("logging out");
+    				console.log("logging out");    
     				window.activeSession.set("id","delete");
-    				window.activeSession.destroy();    			
+    				window.activeSession.destroy();    	
+    			    delete window.activeSession;
+    			    window.router.controller.navigate('',{trigger:true}); 	            	
     			}
-    		});   
-    Backbone.history.start();
+    		});      
   };
   return {
     initialize: initialize,

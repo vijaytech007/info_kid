@@ -7,7 +7,7 @@ class Session extends DB_Connect{
 	public function crossCheck($user){		
 		if($_SESSION['user']['username']==$user['username']  && $_SESSION['user']['type']==$user['type'] && $_SESSION['user']['token']==$user['token'])    	
     	return true;
-    	elseif($_COOKIE['token']==$_SESSION['user']['token'] && $_COOKIE['username']==$_SESSION['user']['username']){
+    	elseif($_COOKIE['token']==$_SESSION['user']['token'] && $_COOKIE['username']==$_SESSION['user']['username']){		
     		return true;
     	}
     	else

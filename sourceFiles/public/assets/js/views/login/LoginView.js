@@ -9,9 +9,12 @@ define([
   'text!templates/login/loginTemplate.html'
 ], function($, _, Backbone, LoginModel, LoginTypeModel, SessionModel, Router, LoginTemplate){
   var loginView=Backbone.View.extend({
-	  el:".page",	  
+	  el:".page",	
+	  initialize:function(){
+	  			  console.log("login View Initialized ");		
+  		},
 	  render:function(){
-	  			console.log("login initialized!!");
+	  			console.log("login renderred!!",this.cid);
 	  			var template=_.template(LoginTemplate,{});
 	  			this.$el.html(template);	
   			},
@@ -29,6 +32,8 @@ define([
 
   			},
   	submitForm:function(ev){
+  			console.log('in submit view is ',this.cid);
+  			var that=this;
 				var loginDetails=$(ev.currentTarget).serializeObject();
 				    loginDetails.type=""; 
 					loginDetails.type=LoginTypeModel.get();
@@ -40,7 +45,11 @@ define([
 							window.activeSession=new SessionModel(user.toJSON());
 							window.router=Router;
 							window.router.initialize();
+							if(!Backbone.History.started){
+							Backbone.history.start();
+							}
 							window.router.controller.navigate('home',{trigger:true});
+							//that.undelegateEvents();
 					},
 					error:function(){
 						console.log("Wrong password enterred");

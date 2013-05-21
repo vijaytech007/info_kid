@@ -3,22 +3,27 @@ define([
   'underscore',
   'backbone',  
   'views/header/HeaderView',
+  'views/header/LoginHeaderView',
   'views/footer/FooterView',
   'views/home/HomeView',
   'views/login/LoginView'  
-], function($, _, Backbone, HeaderView, FooterView, HomeView, LoginView){
-  var initialize = function(){  
-	  		var headerView=new HeaderView();
-	  		var footerView=new FooterView();
-	  		var loginView=new LoginView();
-	  		var homeView=new HomeView();
-	  		headerView.render(window.activeSession);
+], function($, _, Backbone, HeaderView, LoginHeaderView, FooterView, HomeView, LoginView){
+	    
+	 //   var headerView=new HeaderView();
+	    var loginHeaderView=new LoginHeaderView();
+		var footerView=new FooterView();
+		var loginView=new LoginView();
+		var homeView=new HomeView();	
+		var initialize = function(){  	  			  		
 	  		footerView.render();
 	  		if(!window.activeSession){
 	  		loginView.render();	  		
+	  		loginHeaderView.render();
 	  		}
 	  		else{
-	  			homeView.render();
+	  			window.router.controller.navigate('home',{trigger:true})
+	  		/*	homeView.render();
+	  			headerView.render(window.activeSession);*/
 	  		}
   };
   $.ajaxSetup({
@@ -30,21 +35,18 @@ define([
 	        },
 	        403:function(){
 	        	//Forbidden Access
-	        	console.log("error 403 triggered");
-	        	if(window.activeSession){
+	        	console.log("error 403 triggered");	        	
 	            	 delete window.activeSession;
-	            	 delete window.router;
-	             }
+	            	 window.router.controller.navigate('',{trigger:true});
+	            	 Backbone.history.stop();
+	            	 delete window.router;	             
 	        	initialize();
 	        },
 	        205:function(){
-	        	console.log('logging out');
-	        	if(window.activeSession){	        		
-	            	 delete window.activeSession;
-	            	 window.router.controller.navigate('',{trigger:true});
+	        		console.log('At 205 logging out');	        	      			            	
 	        		 Backbone.history.stop();
-	            	 delete window.router;
-	             }
+	        		 window.router.controller.off();
+	            	 delete window.router;	            
 	        	initialize();	        	
 	        }
 	    }
